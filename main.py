@@ -80,7 +80,7 @@ result.update({"verifyDnsTags": verifyDnsTags(url)})
 
 result.update({"verifyDigitCount": verifyDigitCount(url)})
 
-percentResult  =0
+percentResult = 0
 
 for value in result.values():
     percentResult+=value
@@ -93,5 +93,4 @@ print("Вероятность не принадлежности сайта к ф
 print(percentResult)
 
 
-val: str = input("Нажмите Enter для выхода:")
-print(val)
+os.system("pause")

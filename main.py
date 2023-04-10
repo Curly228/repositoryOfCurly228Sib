@@ -1,19 +1,19 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from urllib.parse import urlparse
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi    , {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def verifyTls(url):
+    result = 0
+    if url.scheme == 'https':
+        result = "YES"
+    elif url.scheme == 'http':
+        result = "NO"
+    return result
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-    print('rgfwergfw')
-    print('rgfwer[ffgw')
+print('Введите сайт:\n')
+url = urlparse(input())
 
+result = {"TLS" : verifyTls(url)}
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("Результат проверки сайта на фишинг ")
+print(result)

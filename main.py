@@ -93,4 +93,4 @@ print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
 
-time.sleep(60)
+input("Нажмите Enter для выхода")

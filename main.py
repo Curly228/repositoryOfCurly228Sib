@@ -6,8 +6,6 @@ import requests
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
 
-from urllib3.exceptions import ConnectTimeoutError
-
 
 def verifyTls(url):
     if url.scheme == 'https':
@@ -57,7 +55,8 @@ def verifyDnsTags(url):
     return thNormalizer(intersection_counter, 0, 0.8)
 
 def verifyDigitCount(url):
-    digits_count = 0
+    temp = 0
+    digits_count = temp
     for symbol in url.hostname:
         if symbol.isdigit():
             digits_count += 1

@@ -2,7 +2,6 @@ from math import tanh
 
 import dns.resolver
 import requests
-import os
 
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
@@ -92,5 +91,4 @@ print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
 
-
-os.system("pause")
+input("Нажмите enter что бы продолжить.")

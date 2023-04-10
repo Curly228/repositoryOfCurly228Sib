@@ -1,8 +1,7 @@
 from urllib.parse import urlparse
 
-
 def verifyTls(url):
-    result = 0
+    result = "NO"
     if url.scheme == 'https':
         result = "YES"
     elif url.scheme == 'http':
@@ -10,10 +9,23 @@ def verifyTls(url):
     return result
 
 
+def verifySubDomains(url):
+    splitHost = url.hostname.split('.')
+    subDomain = splitHost[1] + "."+splitHost[2]+"\n"
+    file = open('static/top-1000000-domains', 'r')
+    for line in file:
+        if subDomain == line:
+            return "YES"
+
+    return "NO"
+
 print('Введите сайт:\n')
 url = urlparse(input())
 
-result = {"TLS" : verifyTls(url)}
+result = {"verifyTLS": verifyTls(url)}
+
+result.update( {"verifyDomain": verifySubDomains(url)})
+
 
 print("Результат проверки сайта на фишинг ")
 print(result)

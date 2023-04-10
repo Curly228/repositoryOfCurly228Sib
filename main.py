@@ -1,4 +1,5 @@
 from math import tanh
+from time import sleep
 
 import dns.resolver
 import requests
@@ -90,3 +91,7 @@ print("Результат проверки сайта на фишинг ")
 print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
+
+delay = 20
+sleep(delay)
+print('Back to work…')

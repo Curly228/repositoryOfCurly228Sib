@@ -3,6 +3,7 @@ from time import sleep
 
 import dns.resolver
 import requests
+import time
 
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
@@ -92,6 +93,4 @@ print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
 
-delay = 20
-sleep(delay)
-print('Back to work…')
+time.sleep(60)

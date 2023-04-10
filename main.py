@@ -1,9 +1,7 @@
 from math import tanh
-from time import sleep
 
 import dns.resolver
 import requests
-import time
 
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
@@ -93,4 +91,6 @@ print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
 
-input("Нажмите Enter для выхода")
+
+val = input("Нажмите Enter для выхода:")
+print(val)

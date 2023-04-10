@@ -2,6 +2,7 @@ from math import tanh
 
 import dns.resolver
 import requests
+import os
 
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
@@ -92,5 +93,5 @@ print("Вероятность не принадлежности сайта к ф
 print(percentResult)
 
 
-val = input("Нажмите Enter для выхода:")
+val: str = input("Нажмите Enter для выхода:")
 print(val)

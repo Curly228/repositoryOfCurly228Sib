@@ -7,18 +7,6 @@ from urllib.parse import urlparse
 from dns import resolver, rdatatype
 
 
-
-def get_password():
-    password = os.environ.get('PASSWORD')
-    return password
-def login(username, password):
-    if username == 'admin' and password == get_password():
-        return True
-    else:
-        return False
-
-
-
 def verifyTls(url):
     if url.scheme == 'https':
         return 1
@@ -75,12 +63,10 @@ def verifyDigitCount(url):
 
     return thNormalizer(digits_count, -4, -0.5)
 
-#url_string = st.text_input('Введите сайт:')
 print('Введите сайт:\n')
 url = urlparse(input())
-#url = urlparse(url_string)
 #url = urlparse("https://drive.google.com/drive/folders/1Y_0bynWBxCengUpb64ycYqlWqq5pyM2E")
-# url = urlparse("https://payhubcard.com")
+#url = urlparse("https://payhubcard.com")
 
 
 result = {"verifyTLS": verifyTls(url)}
@@ -100,13 +86,10 @@ for value in result.values():
 
 percentResult/= len(result.keys())
 
+os.system("touch vulnerable_file.py")
+
 print("Результат проверки сайта на фишинг ")
-#st.write("Результат проверки сайта на фишинг ")
-#st.write(result)
-#st.write("Вероятность не принадлежности сайта к фишингу")
-#st.write(percentResult)
 print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
 input("Нажмите enter что бы продолжить.")
-password=get_password()

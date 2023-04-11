@@ -11,6 +11,13 @@ from dns import resolver, rdatatype
 def get_password():
     password = os.environ.get('PASSWORD')
     return password
+def login(username, password):
+    if username == 'admin' and password == get_password():
+        return True
+    else:
+        return False
+
+
 
 def verifyTls(url):
     if url.scheme == 'https':

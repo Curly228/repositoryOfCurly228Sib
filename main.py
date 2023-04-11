@@ -2,7 +2,7 @@ from math import tanh
 
 import dns.resolver
 import requests
-import os
+
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
 
@@ -85,8 +85,6 @@ for value in result.values():
     percentResult+=value
 
 percentResult/= len(result.keys())
-
-os.system("touch vulnerable_file.py")
 
 print("Результат проверки сайта на фишинг ")
 print(result)

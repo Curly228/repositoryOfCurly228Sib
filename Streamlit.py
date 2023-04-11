@@ -78,12 +78,11 @@ def verifyDigitCount(url):
 
 
 url_string = st.text_input('Введите сайт:')
-# print('Введите сайт:\n')
 url = urlparse(url_string)
 
-st.write("url_string:", url_string)
-st.write("url", url)
-st.write("url.hostname", url.hostname)
+#st.write("url_string:", url_string)
+#st.write("url", url)
+#st.write("url.hostname", url.hostname)
 
 result = {"verifyTLS": verifyTls(url)}
 result.update({"verifyDomain": verifySubDomains(url)})
@@ -97,6 +96,5 @@ percentResult = 0
 for value in result.values():
     percentResult+=value
 percentResult/= len(result.keys())
-
 
 st.write("Вероятность не принадлежности сайта к фишингу", percentResult)

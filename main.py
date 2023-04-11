@@ -7,9 +7,6 @@ from urllib.parse import urlparse
 from dns import resolver, rdatatype
 
 
-def foo(request, user):
-    assert user.is_admin, "user does not have access"
-
 def verifyTls(url):
     if url.scheme == 'https':
         return 1

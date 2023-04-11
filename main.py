@@ -7,6 +7,9 @@ from urllib.parse import urlparse
 from dns import resolver, rdatatype
 
 
+def foo(request, user):
+    assert user.is_admin, "user does not have access"
+
 def verifyTls(url):
     if url.scheme == 'https':
         return 1
@@ -63,8 +66,10 @@ def verifyDigitCount(url):
 
     return thNormalizer(digits_count, -4, -0.5)
 
+#url_string = st.text_input('Введите сайт:')
 print('Введите сайт:\n')
 url = urlparse(input())
+#url = urlparse(url_string)
 #url = urlparse("https://drive.google.com/drive/folders/1Y_0bynWBxCengUpb64ycYqlWqq5pyM2E")
 # url = urlparse("https://payhubcard.com")
 
@@ -87,8 +92,11 @@ for value in result.values():
 percentResult/= len(result.keys())
 
 print("Результат проверки сайта на фишинг ")
+#st.write("Результат проверки сайта на фишинг ")
+#st.write(result)
+#st.write("Вероятность не принадлежности сайта к фишингу")
+#st.write(percentResult)
 print(result)
 print("Вероятность не принадлежности сайта к фишингу")
 print(percentResult)
-
 input("Нажмите enter что бы продолжить.")

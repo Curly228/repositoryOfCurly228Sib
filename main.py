@@ -2,10 +2,15 @@ from math import tanh
 
 import dns.resolver
 import requests
-
+import os
 from urllib.parse import urlparse
 from dns import resolver, rdatatype
 
+
+
+def get_password():
+    password = os.environ.get('PASSWORD')
+    return password
 
 def verifyTls(url):
     if url.scheme == 'https':
